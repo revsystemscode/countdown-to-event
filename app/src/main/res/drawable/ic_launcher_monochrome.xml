@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- crown and stem -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M49.75,22h8.5a2.75,2.75 0,0 1,0 5.5h-8.5a2.75,2.75 0,0 1,0 -5.5zM51.5,26h5v9h-5z" />
+    <!-- side button -->
+    <group
+        android:pivotX="73.5"
+        android:pivotY="38"
+        android:rotation="45">
+        <path
+            android:fillColor="#FF000000"
+            android:pathData="M71,35.5h5a1.5,1.5 0,0 1,1.5 1.5v2a1.5,1.5 0,0 1,-1.5 1.5h-5a1.5,1.5 0,0 1,-1.5 -1.5v-2a1.5,1.5 0,0 1,1.5 -1.5z" />
+    </group>
+    <!-- ring (even-odd hole) and wedge -->
+    <path
+        android:fillColor="#FF000000"
+        android:fillType="evenOdd"
+        android:pathData="M54,58m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0zM54,58m-19.5,0a19.5,19.5 0,1 0,39 0a19.5,19.5 0,1 0,-39 0z" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M54,58L54,41A17,17 0,1 1,39.28 66.5Z" />
+</vector>

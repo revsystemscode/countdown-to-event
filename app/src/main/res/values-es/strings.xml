@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_settings">Ajustes</string>
+
+    <string name="tab_upcoming">Próximos</string>
+    <string name="tab_reached">Alcanzados</string>
+    <string name="reached_empty">Aún no hay eventos alcanzados</string>
+    <string name="home_empty_title">Tu primera cuenta regresiva</string>
+    <string name="home_empty_body">Toca + para añadir un cumpleaños, un viaje o cualquier cosa que estés esperando.</string>
+    <string name="event_deleted">Evento borrado</string>
+
+    <string name="action_add_event">Añadir evento</string>
+    <string name="action_back">Atrás</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Borrar</string>
+    <string name="action_share">Compartir</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_close">Cerrar</string>
+    <string name="action_ok">Aceptar</string>
+    <string name="action_undo">Deshacer</string>
+
+    <string name="badge_today">¡Hoy!</string>
+    <string name="badge_ongoing">En curso</string>
+    <plurals name="unit_days">
+        <item quantity="one">día</item>
+        <item quantity="many">días</item>
+        <item quantity="other">días</item>
+    </plurals>
+    <plurals name="unit_hours">
+        <item quantity="one">hora</item>
+        <item quantity="many">horas</item>
+        <item quantity="other">horas</item>
+    </plurals>
+    <plurals name="unit_minutes">
+        <item quantity="one">minuto</item>
+        <item quantity="many">minutos</item>
+        <item quantity="other">minutos</item>
+    </plurals>
+    <plurals name="unit_days_ago">
+        <item quantity="one">día atrás</item>
+        <item quantity="many">días atrás</item>
+        <item quantity="other">días atrás</item>
+    </plurals>
+
+    <string name="repeat_never">Nunca</string>
+    <string name="repeat_none">No se repite</string>
+    <string name="repeat_daily">Cada día</string>
+    <string name="repeat_weekly">Cada semana</string>
+    <string name="repeat_biweekly">Cada 2 semanas</string>
+    <string name="repeat_monthly">Cada mes</string>
+    <string name="repeat_yearly">Cada año</string>
+
+    <string name="editor_title_new">Nuevo evento</string>
+    <string name="editor_title_edit">Editar evento</string>
+    <string name="editor_preview_title">Tu evento</string>
+    <string name="field_title">Título</string>
+    <string name="field_emoji">Emoji</string>
+    <string name="emoji_none">Ninguno</string>
+    <string name="field_when">Cuándo</string>
+    <string name="field_all_day">Todo el día</string>
+    <string name="field_date">Fecha</string>
+    <string name="field_time">Hora</string>
+    <string name="field_multi_day">Varios días</string>
+    <string name="field_end_date">Fecha de fin</string>
+    <string name="field_repeat">Repetir</string>
+    <string name="field_background">Fondo</string>
+    <string name="bg_colors">Colores</string>
+    <string name="bg_gradients">Degradados</string>
+    <string name="bg_photo">Tu foto</string>
+    <string name="bg_pick_photo">Elegir foto</string>
+    <string name="bg_change_photo">Cambiar foto</string>
+    <string name="error_title_blank">Escribe un título</string>
+    <string name="error_title_long">Máximo %d caracteres</string>
+    <string name="error_end_before_start">La fecha de fin no puede ser anterior al inicio</string>
+    <string name="error_image">No se pudo cargar esa imagen. Prueba con otra.</string>
+
+    <string name="color_teal">Turquesa</string>
+    <string name="color_blue">Azul</string>
+    <string name="color_purple">Morado</string>
+    <string name="color_pink">Rosa</string>
+    <string name="color_red">Rojo</string>
+    <string name="color_orange">Naranja</string>
+    <string name="color_green">Verde</string>
+    <string name="color_charcoal">Carbón</string>
+    <string name="gradient_sunset">Atardecer</string>
+    <string name="gradient_ocean">Océano</string>
+    <string name="gradient_forest">Bosque</string>
+    <string name="gradient_berry">Mora</string>
+    <string name="gradient_night">Noche</string>
+    <string name="gradient_aurora">Aurora</string>
+
+    <string name="detail_today">¡Hoy es el día!</string>
+    <string name="detail_ongoing">En curso</string>
+    <string name="detail_reached_today">Fue hoy</string>
+    <plurals name="detail_days_ago">
+        <item quantity="one">Hace %d día</item>
+        <item quantity="many">Hace %d días</item>
+        <item quantity="other">Hace %d días</item>
+    </plurals>
+    <string name="label_days">días</string>
+    <string name="label_hours">horas</string>
+    <string name="label_minutes">min</string>
+    <string name="label_seconds">seg</string>
+    <plurals name="a11y_days">
+        <item quantity="one">%d día</item>
+        <item quantity="many">%d días</item>
+        <item quantity="other">%d días</item>
+    </plurals>
+    <plurals name="a11y_hours">
+        <item quantity="one">%d hora</item>
+        <item quantity="many">%d horas</item>
+        <item quantity="other">%d horas</item>
+    </plurals>
+    <plurals name="a11y_minutes">
+        <item quantity="one">%d minuto</item>
+        <item quantity="many">%d minutos</item>
+        <item quantity="other">%d minutos</item>
+    </plurals>
+    <string name="delete_confirm_title">¿Borrar este evento?</string>
+    <string name="delete_confirm_body">No se puede deshacer.</string>
+
+    <plurals name="share_days_left">
+        <item quantity="one">¡Falta %1$d día para %2$s!</item>
+        <item quantity="many">¡Faltan %1$d días para %2$s!</item>
+        <item quantity="other">¡Faltan %1$d días para %2$s!</item>
+    </plurals>
+    <plurals name="share_hours_left">
+        <item quantity="one">¡Falta %1$d hora para %2$s!</item>
+        <item quantity="many">¡Faltan %1$d horas para %2$s!</item>
+        <item quantity="other">¡Faltan %1$d horas para %2$s!</item>
+    </plurals>
+    <plurals name="share_minutes_left">
+        <item quantity="one">¡Falta %1$d minuto para %2$s!</item>
+        <item quantity="many">¡Faltan %1$d minutos para %2$s!</item>
+        <item quantity="other">¡Faltan %1$d minutos para %2$s!</item>
+    </plurals>
+    <plurals name="share_days_ago">
+        <item quantity="one">%2$s fue hace %1$d día</item>
+        <item quantity="many">%2$s fue hace %1$d días</item>
+        <item quantity="other">%2$s fue hace %1$d días</item>
+    </plurals>
+    <string name="share_today">¡Hoy es el día: %s!</string>
+    <string name="share_footer">Compartido desde Countdown to Event</string>
+
+    <string name="widget_event_label">Cuenta regresiva</string>
+    <string name="widget_event_description">Días que faltan para un evento, o siempre para el próximo. Puede ir en vivo.</string>
+    <string name="widget_list_label">Próximos eventos</string>
+    <string name="widget_list_description">Tus próximos eventos de un vistazo.</string>
+    <string name="widget_empty_title">Sin eventos</string>
+    <string name="widget_empty_body">Toca para crear uno</string>
+    <string name="widget_list_empty">Nada por ahora</string>
+    <string name="widget_today_at">Hoy %s</string>
+    <string name="widget_preview_title">Cumple de Lise 🎂</string>
+    <string name="widget_preview_unit">días</string>
+    <string name="widget_preview_row1">🎂 Cumple de Lise · 7 días</string>
+    <string name="widget_preview_row2">✈️ Viaje a Lisboa · 21 días</string>
+    <string name="widget_config_title">Widget de cuenta regresiva</string>
+    <string name="widget_config_live">Cuenta regresiva en vivo</string>
+    <string name="widget_config_live_desc">Muestra horas, minutos y segundos en marcha</string>
+    <string name="widget_config_show">Mostrar</string>
+    <string name="widget_config_next">Próximo evento</string>
+    <string name="widget_config_next_desc">Siempre el evento más cercano</string>
+    <string name="widget_config_done">Listo</string>
+    <string name="settings_widgets">Widgets</string>
+    <string name="settings_widgets_hint">Pon una cuenta regresiva en tu pantalla de inicio. Para cambiar un widget después, mantenlo pulsado y abre sus ajustes.</string>
+    <string name="settings_widgets_manual">Mantén pulsada la pantalla de inicio, elige Widgets y busca Countdown to Event.</string>
+    <string name="settings_add_event_widget">Añadir widget de cuenta regresiva</string>
+    <string name="settings_add_list_widget">Añadir widget de próximos eventos</string>
+
+
+    <string name="settings_reminders">Recordatorios</string>
+    <string name="settings_reminder">Recordarme</string>
+    <string name="reminder_none">Nunca</string>
+    <string name="reminder_15_min">15 minutos antes</string>
+    <string name="reminder_1_hour">1 hora antes</string>
+    <string name="reminder_1_day">1 día antes</string>
+    <string name="reminder_2_days">2 días antes</string>
+    <string name="settings_notify_on_day">El mismo día</string>
+    <string name="settings_notify_on_day_desc">Un aviso cuando llega el evento (a las 9:00 si es de todo el día)</string>
+    <string name="settings_notifications_off">Las notificaciones están desactivadas</string>
+    <string name="settings_notifications_off_desc">Actívalas para recibir tus recordatorios.</string>
+    <string name="settings_exact_alarms">Avisos a la hora exacta</string>
+    <string name="settings_exact_alarms_desc">Sin este permiso, Android puede retrasar los avisos unos minutos y los widgets en vivo pueden detenerse un momento.</string>
+    <string name="action_enable">Activar</string>
+    <string name="action_allow">Permitir</string>
+    <string name="action_not_now">Ahora no</string>
+    <string name="prompt_notifications_title">Activa los recordatorios</string>
+    <string name="prompt_notifications_body">Te avisaremos antes de cada evento y el mismo día.</string>
+    <string name="channel_reminders">Recordatorios</string>
+    <string name="channel_reminders_desc">Avisos antes de tus eventos</string>
+    <string name="channel_event_day">Día del evento</string>
+    <string name="channel_event_day_desc">Cuando llega un evento</string>
+    <string name="notif_today">¡Hoy es el día!</string>
+    <string name="notif_now">¡Llegó la hora!</string>
+    <string name="notif_in_15_min">En 15 minutos · %s</string>
+    <string name="notif_in_1_hour">En 1 hora · %s</string>
+    <string name="notif_tomorrow">Mañana · %s</string>
+    <string name="notif_in_2_days">En 2 días · %s</string>
+
+    <string name="settings_appearance">Apariencia</string>
+    <string name="settings_theme">Tema</string>
+    <string name="theme_system">Igual que el sistema</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_backup">Copia de seguridad</string>
+    <string name="backup_export">Exportar eventos</string>
+    <string name="backup_export_desc">Guarda todos tus eventos y fotos en un archivo que elijas</string>
+    <string name="backup_import">Importar eventos</string>
+    <string name="backup_import_desc">Añade los eventos de una copia. Los que ya tienes se conservan.</string>
+    <plurals name="backup_exported">
+        <item quantity="one">Se guardó %d evento</item>
+        <item quantity="many">Se guardaron %d eventos</item>
+        <item quantity="other">Se guardaron %d eventos</item>
+    </plurals>
+    <string name="backup_imported">Importados: %1$d. Ya existían: %2$d. No válidos: %3$d.</string>
+    <string name="backup_not_a_backup">Ese archivo no es una copia de Countdown to Event.</string>
+    <string name="backup_failed">No se pudo completar la copia. Inténtalo de nuevo.</string>
+    <string name="settings_about">Acerca de</string>
+    <string name="settings_version">Versión %s</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Countdown to Event app icon — original artwork for this project.
+  108x108 adaptive-icon grid; keep shapes inside the 66dp safe circle (center 54,54).
+  Mirrors app/src/main/res/drawable/ic_launcher_background.xml + ic_launcher_foreground.xml.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22B1BD"/>
+      <stop offset="1" stop-color="#0F7E89"/>
+    </linearGradient>
+  </defs>
+  <rect width="108" height="108" fill="url(#bg)"/>
+  <!-- crown and stem -->
+  <rect x="47" y="22" width="14" height="5.5" rx="2.75" fill="#FFFFFF"/>
+  <rect x="51.5" y="26" width="5" height="9" fill="#FFFFFF"/>
+  <!-- side button -->
+  <rect x="69.5" y="35.5" width="8" height="5" rx="1.5" fill="#FFFFFF" transform="rotate(45 73.5 38)"/>
+  <!-- body, face, remaining-time wedge, hub -->
+  <circle cx="54" cy="58" r="24" fill="#FFFFFF"/>
+  <circle cx="54" cy="58" r="19.5" fill="#E3F5F6"/>
+  <path d="M54,58 L54,41 A17,17 0 1,1 39.28,66.5 Z" fill="#FF7A59"/>
+  <circle cx="54" cy="58" r="3.2" fill="#0D2F35"/>
+</svg>

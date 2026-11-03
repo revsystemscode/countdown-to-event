@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Status bar icon: the stopwatch silhouette, white on transparent. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <group
+        android:translateX="-22"
+        android:translateY="-20">
+    <!-- crown and stem -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M49.75,22h8.5a2.75,2.75 0,0 1,0 5.5h-8.5a2.75,2.75 0,0 1,0 -5.5zM51.5,26h5v9h-5z" />
+    <!-- side button -->
+    <group
+        android:pivotX="73.5"
+        android:pivotY="38"
+        android:rotation="45">
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M71,35.5h5a1.5,1.5 0,0 1,1.5 1.5v2a1.5,1.5 0,0 1,-1.5 1.5h-5a1.5,1.5 0,0 1,-1.5 -1.5v-2a1.5,1.5 0,0 1,1.5 -1.5z" />
+    </group>
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:fillType="evenOdd"
+            android:pathData="M54,58m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0zM54,58m-19.5,0a19.5,19.5 0,1 0,39 0a19.5,19.5 0,1 0,-39 0z" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M54,58L54,41A17,17 0,1 1,39.28 66.5Z" />
+    </group>
+</vector>
