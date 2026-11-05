@@ -13,6 +13,12 @@ Sin anuncios, sin cuentas y sin internet: todo se guarda en tu teléfono.
   <img src="docs/play-store/screenshots/es-5-settings.png" width="19%" alt="Ajustes" />
 </p>
 
+## Pruébala
+
+Descarga el APK desde [`demo/CountdownToEvent-1.0.0.apk`](demo/CountdownToEvent-1.0.0.apk) e instálalo
+en tu teléfono (Android 8.0 o superior). Android te pedirá permitir la instalación de apps de
+fuentes desconocidas.
+
 ## Funciones
 
 - **Eventos:** título, emoji, fecha y hora, eventos de todo el día y de varios días.
