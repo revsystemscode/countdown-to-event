@@ -198,6 +198,16 @@
     <string name="notif_in_1_hour">En 1 hora · %s</string>
     <string name="notif_tomorrow">Mañana · %s</string>
     <string name="notif_in_2_days">En 2 días · %s</string>
+    <string name="channel_lock_screen">Pantalla de bloqueo</string>
+    <string name="channel_lock_screen_desc">La cuenta regresiva del evento que fijes en la pantalla de bloqueo</string>
+    <string name="lock_screen_show">Mostrar en la pantalla de bloqueo</string>
+    <string name="lock_screen_hide">Quitar de la pantalla de bloqueo</string>
+    <string name="lock_starts_at">Empieza: %s</string>
+    <plurals name="lock_days_left">
+        <item quantity="one">Falta %d día</item>
+        <item quantity="many">Faltan %d días</item>
+        <item quantity="other">Faltan %d días</item>
+    </plurals>
 
     <string name="settings_appearance">Apariencia</string>
     <string name="settings_theme">Tema</string>

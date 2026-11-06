@@ -17,6 +17,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Edit
+import androidx.compose.material.icons.outlined.Lock
+import androidx.compose.material.icons.outlined.LockOpen
 import androidx.compose.material.icons.outlined.Repeat
 import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.AlertDialog
@@ -56,11 +58,14 @@ import com.revsystems.countdowntoevent.domain.model.RepeatRule
 import com.revsystems.countdowntoevent.domain.time.Countdown
 import com.revsystems.countdowntoevent.domain.time.CountdownStatus
 import com.revsystems.countdowntoevent.domain.time.toCountdownParts
+import com.revsystems.countdowntoevent.notifications.LockScreenContent
+import com.revsystems.countdowntoevent.notifications.LockScreenPlanner
 import com.revsystems.countdowntoevent.ui.components.EventBackgroundView
 import com.revsystems.countdowntoevent.ui.components.scrim
 import com.revsystems.countdowntoevent.ui.format.formatEventDates
 import com.revsystems.countdowntoevent.ui.format.labelRes
 import com.revsystems.countdowntoevent.ui.format.titleWithEmoji
+import com.revsystems.countdowntoevent.ui.permissions.rememberNotificationAccess
 import com.revsystems.countdowntoevent.ui.share.shareEvent
 import com.revsystems.countdowntoevent.ui.theme.CountdownNumberStyle
 import com.revsystems.countdowntoevent.ui.util.LightStatusBarIcons
@@ -76,6 +81,12 @@ fun EventDetailScreen(
     viewModel: EventDetailViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
+    val pinned by viewModel.pinnedToLockScreen.collectAsStateWithLifecycle()
+    val notificationAccess =
+        rememberNotificationAccess(
+            wasAskedBefore = viewModel::notificationPermissionAsked,
+            onAsked = viewModel::markNotificationPermissionAsked,
+        )
     LightStatusBarIcons()
 
     when (val s = state) {
@@ -88,6 +99,14 @@ fun EventDetailScreen(
                 onBack = onBack,
                 onEdit = { onEdit(s.event.id) },
                 onDelete = viewModel::delete,
+                // Pinned without permission shows as off: tapping again asks for it.
+                pinnedToLockScreen = pinned && notificationAccess.notificationsAllowed,
+                onToggleLockScreen = {
+                    val show = !(pinned && notificationAccess.notificationsAllowed)
+                    viewModel.setPinnedToLockScreen(show)
+                    // Pinned first, so it appears as soon as permission is granted (dialog or settings).
+                    if (show && !notificationAccess.notificationsAllowed) notificationAccess.requestNotifications()
+                },
             )
     }
 }
@@ -99,6 +118,9 @@ fun EventDetailContent(
     onBack: () -> Unit,
     onEdit: () -> Unit,
     onDelete: () -> Unit,
+    pinnedToLockScreen: Boolean = false,
+    /** null hides the lock-screen button. */
+    onToggleLockScreen: (() -> Unit)? = null,
 ) {
     var confirmDelete by rememberSaveable { mutableStateOf(false) }
     val context = LocalContext.current
@@ -167,6 +189,20 @@ fun EventDetailContent(
             ) {
                 Icon(Icons.Outlined.Share, contentDescription = null)
                 Text(stringResource(R.string.action_share), modifier = Modifier.padding(start = ButtonDefaults.IconSpacing))
+            }
+            // A one-off event that's over can't be pinned: there's nothing left to count down.
+            if (onToggleLockScreen != null && LockScreenPlanner.content(event, countdown) != LockScreenContent.Gone) {
+                Spacer(Modifier.height(4.dp))
+                TextButton(
+                    onClick = onToggleLockScreen,
+                    colors = ButtonDefaults.textButtonColors(contentColor = OnImage),
+                ) {
+                    Icon(if (pinnedToLockScreen) Icons.Outlined.LockOpen else Icons.Outlined.Lock, contentDescription = null)
+                    Text(
+                        stringResource(if (pinnedToLockScreen) R.string.lock_screen_hide else R.string.lock_screen_show),
+                        modifier = Modifier.padding(start = ButtonDefaults.IconSpacing),
+                    )
+                }
             }
         }
     }

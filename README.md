@@ -15,7 +15,7 @@ Sin anuncios, sin cuentas y sin internet: todo se guarda en tu teléfono.
 
 ## Pruébala
 
-Descarga el APK desde [`demo/CountdownToEvent-1.0.0.apk`](demo/CountdownToEvent-1.0.0.apk) e instálalo
+Descarga el APK desde [`demo/CountdownToEvent-1.1.0.apk`](demo/CountdownToEvent-1.1.0.apk) e instálalo
 en tu teléfono (Android 8.0 o superior). Android te pedirá permitir la instalación de apps de
 fuentes desconocidas.
 
@@ -27,6 +27,7 @@ fuentes desconocidas.
 - **Fondos:** colores, degradados o una foto tuya.
 - **Cuenta en vivo:** días, horas, minutos y segundos en la pantalla de detalle.
 - **Widgets:** un evento (pequeño o grande, con modo en vivo) y lista de próximos eventos.
+- **Pantalla de bloqueo:** fija un evento y verás "Faltan N días" en la pantalla de bloqueo; el último día, una cuenta regresiva en vivo. Los widgets también se pueden poner en la pantalla de bloqueo en los dispositivos que lo permiten.
 - **Recordatorios:** 15 min, 1 h, 1 día o 2 días antes, y aviso el mismo día.
 - **Compartir:** como imagen (1080×1350) o como texto.
 - **Copia de seguridad:** exporta e importa tus eventos en JSON, con fotos incluidas.

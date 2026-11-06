@@ -189,6 +189,15 @@
     <string name="notif_in_1_hour">In 1 hour · %s</string>
     <string name="notif_tomorrow">Tomorrow · %s</string>
     <string name="notif_in_2_days">In 2 days · %s</string>
+    <string name="channel_lock_screen">Lock screen</string>
+    <string name="channel_lock_screen_desc">Countdown for the event you pin to the lock screen</string>
+    <string name="lock_screen_show">Show on lock screen</string>
+    <string name="lock_screen_hide">Remove from lock screen</string>
+    <string name="lock_starts_at">Starts: %s</string>
+    <plurals name="lock_days_left">
+        <item quantity="one">%d day to go</item>
+        <item quantity="other">%d days to go</item>
+    </plurals>
 
     <string name="settings_appearance">Appearance</string>
     <string name="settings_theme">Theme</string>

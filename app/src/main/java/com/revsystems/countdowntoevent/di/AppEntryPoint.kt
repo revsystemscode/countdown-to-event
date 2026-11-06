@@ -2,6 +2,7 @@ package com.revsystems.countdowntoevent.di
 
 import android.content.Context
 import com.revsystems.countdowntoevent.domain.repository.EventRepository
+import com.revsystems.countdowntoevent.notifications.LockScreenController
 import com.revsystems.countdowntoevent.notifications.ReminderScheduler
 import com.revsystems.countdowntoevent.widget.WidgetRefreshScheduler
 import com.revsystems.countdowntoevent.widget.WidgetUpdater
@@ -25,6 +26,8 @@ interface AppEntryPoint {
     fun widgetRefreshScheduler(): WidgetRefreshScheduler
 
     fun reminderScheduler(): ReminderScheduler
+
+    fun lockScreenController(): LockScreenController
 
     @ApplicationScope
     fun applicationScope(): CoroutineScope

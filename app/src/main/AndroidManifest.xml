@@ -80,6 +80,10 @@
             android:name=".notifications.ReminderReceiver"
             android:exported="false" />
 
+        <receiver
+            android:name=".notifications.LockScreenReceiver"
+            android:exported="false" />
+
         <!-- Exported for system broadcasts; any other sender can at most trigger a harmless recalculation. -->
         <receiver
             android:name=".system.SystemEventsReceiver"

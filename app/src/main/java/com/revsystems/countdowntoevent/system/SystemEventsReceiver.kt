@@ -27,6 +27,7 @@ class SystemEventsReceiver : BroadcastReceiver() {
                 // After a manual clock change the "checked until" mark can't be trusted.
                 if (action in CLOCK_ACTIONS) reminders.restartFromNow() else reminders.reschedule()
                 entryPoint.widgetUpdater().refreshAll()
+                entryPoint.lockScreenController().refresh()
             } finally {
                 pending.finish()
             }

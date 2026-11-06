@@ -5,17 +5,21 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
 import com.revsystems.countdowntoevent.data.images.BackgroundImageStore
+import com.revsystems.countdowntoevent.data.settings.LockScreenStore
 import com.revsystems.countdowntoevent.domain.model.Event
 import com.revsystems.countdowntoevent.domain.model.EventBackground
 import com.revsystems.countdowntoevent.domain.repository.EventRepository
+import com.revsystems.countdowntoevent.domain.settings.SettingsRepository
 import com.revsystems.countdowntoevent.domain.time.Countdown
 import com.revsystems.countdowntoevent.domain.time.CountdownCalculator
+import com.revsystems.countdowntoevent.notifications.LockScreenController
 import com.revsystems.countdowntoevent.ui.navigation.EventDetailRoute
 import com.revsystems.countdowntoevent.ui.util.tickerFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.time.Clock
@@ -40,6 +44,9 @@ class EventDetailViewModel
         savedStateHandle: SavedStateHandle,
         private val repository: EventRepository,
         private val imageStore: BackgroundImageStore,
+        private val lockScreenStore: LockScreenStore,
+        private val lockScreen: LockScreenController,
+        private val settings: SettingsRepository,
         private val clock: Clock,
     ) : ViewModel() {
         private val eventId = savedStateHandle.toRoute<EventDetailRoute>().eventId
@@ -52,6 +59,24 @@ class EventDetailViewModel
                     DetailUiState.Loaded(event, CountdownCalculator.calculate(event, now, clock.zone))
                 }
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), DetailUiState.Loading)
+
+        val pinnedToLockScreen: StateFlow<Boolean> =
+            lockScreenStore.pinnedEventId
+                .map { it == eventId }
+                .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), false)
+
+        /** Pinning replaces whichever event was on the lock screen before. */
+        fun setPinnedToLockScreen(pinned: Boolean) {
+            viewModelScope.launch {
+                if (pinned) lockScreenStore.pin(eventId) else lockScreenStore.unpin(eventId)
+                // The store may not change (already pinned, permission just granted), so redraw anyway.
+                lockScreen.refresh()
+            }
+        }
+
+        suspend fun notificationPermissionAsked(): Boolean = settings.notificationPermissionAsked()
+
+        suspend fun markNotificationPermissionAsked() = settings.markNotificationPermissionAsked()
 
         fun delete() {
             viewModelScope.launch {
